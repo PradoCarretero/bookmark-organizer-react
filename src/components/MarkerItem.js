@@ -8,10 +8,10 @@ function MarkerItem(props) {
     </>
   );
 }
-MarkerItem.defaultProps = {
+/* MarkerItem.defaultProps = {
   marker: {
     id: "Not defined",
     url: "Not defined",
   },
-};
+}; */
 export default MarkerItem;

@@ -2,7 +2,6 @@ import "../styles/App.scss";
 import "../styles/core/reset.scss";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
 /* import PageNotFound from "./PageNotFound"; */
 import MarkerForm from "./MarkerForm";
 import MarkerList from "./MarkerList";
@@ -15,12 +14,18 @@ function App() {
     id: "",
     url: "",
   });
-  const changeData = (nombreInput, valueInput) => {
+  const changeData = (valueInput) => {
     setNewMarker({
       ...newMarker,
-      [nombreInput]: valueInput,
+      url: valueInput,
     });
+    console.log(newMarker);
   };
+
+  const addMarker = () => {
+    setMarkerList([...markerList, newMarker]);
+  };
+
   return (
     <>
       <Routes>
@@ -31,11 +36,6 @@ function App() {
               <Header />
               <main>
                 <MarkerList markerList={markerList} />
-                {/*  <section>
-                  <Link to="/marker-form">
-                    <button className="marker">+</button>
-                  </Link>
-                </section> */}
               </main>
               <Footer />
             </>
@@ -43,7 +43,13 @@ function App() {
         />
         <Route
           path="/marker-form"
-          element={<MarkerForm newMarker={newMarker} changeData={changeData} />}
+          element={
+            <MarkerForm
+              newMarker={newMarker}
+              changeData={changeData}
+              addMarker={addMarker}
+            />
+          }
         />
         {/* <Route path="*" element={<PageNotFound />} /> */}
       </Routes>
