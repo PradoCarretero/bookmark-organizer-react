@@ -1,8 +1,8 @@
 import "../styles/App.scss";
 import "../styles/core/reset.scss";
 import { Routes, Route } from "react-router-dom";
-import PageNotFound from "./PageNotFound";
-import NewMarker from "./NewMarker";
+/* import PageNotFound from "./PageNotFound";
+import NewMarker from "./NewMarker"; */
 
 function App() {
   const handleClickBtn = (ev) => {
