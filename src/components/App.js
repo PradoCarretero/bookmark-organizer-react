@@ -4,15 +4,14 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 /* import PageNotFound from "./PageNotFound"; */
 import MarkerForm from "./MarkerForm";
-import MarkerList from "./MarkerList";
-import Header from "./Header";
-import Footer from "./Footer";
+import MarkerPage from "./MarkerPage";
 
 function App() {
   const [markerList, setMarkerList] = useState([]);
   const [newMarker, setNewMarker] = useState({
     id: "",
     url: "",
+    type: "",
   });
   const changeData = (valueInput) => {
     setNewMarker({
@@ -33,11 +32,7 @@ function App() {
           path="/"
           element={
             <>
-              <Header />
-              <main>
-                <MarkerList markerList={markerList} />
-              </main>
-              <Footer />
+              <MarkerPage markerList={markerList} />
             </>
           }
         />

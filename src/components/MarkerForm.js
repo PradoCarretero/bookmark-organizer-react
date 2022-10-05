@@ -1,5 +1,4 @@
 import Header from "./Header";
-import Button from "./Button";
 import { Link } from "react-router-dom";
 
 function MarkerForm(props) {
@@ -8,7 +7,6 @@ function MarkerForm(props) {
     props.changeData(valueInput);
   };
   const saveNewMarker = (ev) => {
-    ev.preventDefault();
     props.addMarker();
   };
   return (
@@ -23,9 +21,8 @@ function MarkerForm(props) {
             value={props.newMarker.url}
             onChange={handleInput}
           />
-          <Link to="/">
-            {/* resolver esto para que vuelva a la principal */}
-            <Button function={saveNewMarker}>Guardar</Button>
+          <Link onClick={saveNewMarker} role="button" to="/">
+            Guardar
           </Link>
         </form>
       </main>
