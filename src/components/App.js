@@ -11,7 +11,7 @@ function App() {
   const [newMarker, setNewMarker] = useState({
     id: "",
     url: "",
-    type: "",
+    sheet: "",
   });
   const changeData = (valueInput) => {
     setNewMarker({
@@ -30,6 +30,14 @@ function App() {
       <Routes>
         <Route
           path="/"
+          element={
+            <>
+              <MarkerPage markerList={markerList} />
+            </>
+          }
+        />
+        <Route
+          path="/work-sheet"
           element={
             <>
               <MarkerPage markerList={markerList} />
