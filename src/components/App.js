@@ -25,6 +25,10 @@ function App() {
     setMarkerList([...markerList, newMarker]);
   };
 
+  const handleSheetInfo = () => {
+    console.log("yepi");
+  };
+
   return (
     <>
       <Routes>
@@ -32,18 +36,21 @@ function App() {
           path="/"
           element={
             <>
-              <MarkerPage markerList={markerList} />
+              <MarkerPage
+                markerList={markerList}
+                handleSheetInfo={handleSheetInfo}
+              />
             </>
           }
         />
-        <Route
+        {/*   <Route
           path="/work-sheet"
           element={
             <>
               <MarkerPage markerList={markerList} />
             </>
           }
-        />
+        /> */}
         <Route
           path="/marker-form"
           element={

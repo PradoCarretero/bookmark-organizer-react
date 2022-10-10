@@ -14,7 +14,7 @@ function MarkerForm(props) {
       <Header />
       <main>
         <form action="">
-          <label htmlFor="">Añadir un nuevo enlace </label>
+          <label htmlFor="addNewMarker">Añadir un nuevo enlace </label>
           <input
             type="text"
             id="markerurl"

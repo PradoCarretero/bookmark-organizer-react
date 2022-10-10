@@ -6,7 +6,6 @@ function Header(props) {
       <h1>Bookmark Organize</h1>
       <nav>
         <Link to="/">Inicio</Link>
-        <p>Trabajo</p>
       </nav>
     </header>
   );
